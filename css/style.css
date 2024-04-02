@@ -7,16 +7,21 @@
   font-family: "Inter", sans-serif;
   font-size: 18px;
   font-weight: 300;
+  scroll-behavior: smooth;
 }
-body{
+body {
   padding: 0% 13%;
 }
 h1 {
   font-family: "Readex Pro", sans-serif;
 }
 
+section {
+  margin-top: 50px;
+}
+
 .container {
-  width: 1200px;
+  width: 1300px;
   margin: 0 auto;
 }
 
@@ -37,14 +42,37 @@ header {
 .search {
   display: flex;
   position: relative;
+  height: 25px;
 }
 
 .search img {
-
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 20px;
+  height: 20px;
 }
 
 #search {
+  padding-left: 35px;
+  border-radius: 10px;
+  height: 30px;
+}
 
+.logBtn {
+  width: 100px;
+  height: 30px;
+  margin-right: 20px;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  font-size: 17px;
+  text-transform: uppercase;
+  color: black;
+  text-decoration: none;
+  margin-right: 30px;
+  margin-top: -5px;
+  cursor: pointer;
 }
 
 header nav {
@@ -62,11 +90,12 @@ header a {
   text-decoration: none;
   margin-right: 30px;
 }
-header a:hover {
+header a:hover,
+.logBtn:hover {
   color: #db3434;
 }
 
-/* Section 1 */
+/*! visual */
 
 .section1 {
   position: relative;
@@ -104,7 +133,7 @@ header a:hover {
   right: 0;
 }
 
-/* Section 2 */
+/*! visual */
 
 .section2 h2 {
   font-size: 42px;
@@ -116,7 +145,8 @@ header a:hover {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 50px;
+  gap: 140px;
+  margin-left: -100px;
 }
 .block1 {
   display: flex;
@@ -192,6 +222,13 @@ header a:hover {
   margin-top: 600px;
 }
 
+/*! products */
+
+#products h2 {
+  text-align: center;
+  font-size: 48px;
+}
+
 .block3 {
   display: flex;
   justify-content: center;
@@ -260,26 +297,25 @@ header a:hover {
   margin-top: 20px;
 }
 
-.block5 img {
-  width: 620px;
-}
-.block5 ul {
-  list-style: none;
-}
-.block5 li {
-  font-size: 25px;
-  text-transform: capitalize;
-  margin: 40px auto 20px 20px;
-}
+/*! contacts */
+
 .block6 {
-  height: 600px;
+  height: 650px;
   display: flex;
   flex-direction: column;
   background-color: #dce5e2;
   border-radius: 15px;
   margin-bottom: 50px;
   margin-top: 50px;
+  padding-top: 50px;
 }
+
+.block6 h2 {
+  text-align: center;
+  font-weight: 500;
+  font-size: 60px;
+}
+
 .block6 img {
   width: 300px;
   margin: 40px auto;
@@ -315,136 +351,4 @@ header a:hover {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-}
-
-
-@media screen and (max-width: 820px) {
-  .section1 .text-block {
-    width: 320px;
-    padding-bottom: -400px;
-    margin-left: -20px;
-  }
-  .section1 img {
-    margin-bottom: -700px;
-  }
-  .section1 h1 {
-    font-size: 40px;
-  }
-  .img-2 .text2 {
-    margin-left: 15px;
-    margin-top: 100px;
-  }
-  .img-3 .text {
-   margin-left: -220px;
-   margin-top: -40px;
-  }
-  .img-4 .text {
-    margin-top: 420px;
-    margin-left: -170px;
-  }
-  .block1 img {
-    width: 70%;
-    height: 100%;
-  }
-  .block2 img {
-    width: 100%;
-    height: 50%;
-  }
-  .block1 {
-    width: 100%;
-  }
-  .img-1 img {
-    width: 100%;
-    height: 90%;
-  }
-  .img-1 {
-    width: 100%;
-    height: 450px;
-  }
-  .img-2 {
-    width: 100%;
-  }
-  .block2 {
-    width: 100%;
-    margin-left: 40px;
-  }
-
-  .block4 div {
-    width: 255px;
-    margin-bottom: 30px;
-  }
-  .block4 img {
-    width: 200px;
-  }
-  .block4 .name {
-    margin-left: 50px;
-  }
-  .block4 a {
-    margin-left: 65px;
-  }
-
-  .block5 img {
-    width: 100%;
-    height: 100%;
-  }
-  .block5 ul {
-    margin-top: -20px;
-  }
-  .block6 {
-    margin: 50px auto;
-  }
-  .block6 span {
-    display: inline-block;
-    margin: -30px auto -20px auto;
-  }
-  .block6 input {
-    width: 180px;
-  }
-  .block6 button {
-    width: 80px;
-  }
-  .block6 h1 {
-    margin-top: 20px;
-  }
-}
-
-@media screen and (max-width: 430px) {
-  .section1 {
-    margin-top: 100px;
-  }
-  header {
-    height: 90px;
-  }
- .img-2 .text2 {
-  margin-top: -10px;
-  }
-  .block2 {
-    margin-left: 20px;
-  } 
-  .section1 img {
-    display: none;
-  }
-  .img-2 .text2 {
-    margin-top: 10px;
-  }
-  .img-3 .text {
-    margin-left: -161px;
-  }
-}
-@media (max-width:1290px) {
-    .section1{
-      height: 439px;
-    }
-    .section1 img{
-      position: absolute;
-      height: 200px;
-      top: 32%;
-      left: 43%;
-      height: 300px;
-    }
-}
-@media (max-width:800px) {
-  .block6 img{
-    width: 200px;
-  }
 }
