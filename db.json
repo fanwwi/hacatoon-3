@@ -1,7 +1,36 @@
 {
   "users": [
     {
-      
+      "username": "DaNa",
+      "email": "kurmanbekovaaidana88@gmail.com",
+      "password": "12345678",
+      "id": 2
+    }
+  ],
+  "products": [
+    {
+      "image": "https://i.pinimg.com/originals/7a/dc/b0/7adcb00b069d8994b8923c74c828d8b2.jpg",
+      "title": "Ring",
+      "price": "200",
+      "category": "nacklaces",
+      "description": "gold",
+      "id": 1
+    },
+    {
+      "image": "https://i.pinimg.com/originals/7a/dc/b0/7adcb00b069d8994b8923c74c828d8b2.jpg",
+      "title": "Ring",
+      "price": "200",
+      "category": "nacklaces",
+      "description": "gold",
+      "id": 2
+    },
+    {
+      "image": "https://ae01.alicdn.com/kf/Hebe9ad6f085545babc7608ef5928280aG.jpg",
+      "title": "jordans",
+      "price": "200$",
+      "category": "jordans",
+      "description": "gold",
+      "id": 3
     }
   ]
 }

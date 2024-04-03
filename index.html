@@ -16,8 +16,8 @@
         <a href="#home">home</a>
         <a href="#products">all products</a>
         <a href="#contact">contacts us</a>
-        <button id="signUp" class="logBtn">Sign up</button>
-        <button id="logIn" class="logBtn">Log in</button>
+        <button id="signUpBtn" class="logBtn">Sign up</button>
+        <button id="addBtn" class="logBtn">Add product</button>
       </nav>
       <div class="search">
         <img src="./img/search.jpg" alt="" />
@@ -97,18 +97,6 @@
 
     <section class="section3" id="products">
       <h2>See the best around here</h2>
-
-      <div class="block3">
-        <div class="sell">
-          <img src="./img/macbook.png" alt="" />
-          <h3>macbook pro 13</h3>
-          <p class="description">
-            Unleash the potential of productivity and style with the MacBook Pro
-            13, featuring a stunning Retina display, powerful M1 chip.
-          </p>
-          <span class="prise">$ 1,200.00 USD</span>
-        </div>
-      </div>
     </section>
 
     <!--! conatact -->
@@ -126,19 +114,35 @@
       </div>
     </footer>
 
-    <!--! modal  -->
+    <!--! Login and registration  -->
 
-    <div id="modal" class="modal">
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <h2>Введите данные</h2>
-        <input type="text" placeholder="Поле 1" class="gray" />
-        <input type="text" placeholder="Поле 2" class="blue" />
-        <input type="text" placeholder="Поле 3" class="light-blue" />
-        <input type="text" placeholder="Поле 4" class="dark-blue" />
-        <input type="text" placeholder="Поле 5" class="dark-gray" />
-      </div>
-    </div>
+    <div class="overlay"></div>
+
+    <form class="signForm modal">
+      <h3>Sign up</h3>
+      <input id="usernameInp" type="text" placeholder="Username" />
+      <input id="emailInp" type="email" placeholder="Email" />
+      <input id="passwordInp" type="password" placeholder="Password" />
+      <input id="confirmInp" type="password" placeholder="Confirm password" />
+      <button id="signUpConfirm">Sign up</button>
+    </form>
+
+    <form class="loginForm modal">
+      <h3>Log in</h3>
+      <input id="loginEmailInp" type="email" placeholder="Email" />
+      <input id="loginPasswordInp" type="password" placeholder="Password" />
+      <button id="loginConfirm">Log in</button>
+    </form>
+
+    <form class="addForm modal">
+      <h3>Add product</h3>
+      <input id="titleInp" type="text" placeholder="Title" />
+      <input id="priceInp" type="text" placeholder="Price" />
+      <input id="categoryInp" type="text" placeholder="Category" />
+      <input id="descriptionInp" type="text" placeholder="Description" />
+      <input id="imgInp" type="text" placeholder="URL to image" />
+      <button id="addConfirm">Add product</button>
+    </form>
   </body>
 </html>
 <script src="./js/main.js"></script>
