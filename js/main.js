@@ -103,7 +103,7 @@ async function registration() {
   closeModal();
 }
 
-// //! function add products to db
+//! function add products
 
 addBtn.addEventListener("click", () => {
   addForm.style.display = "block";
@@ -114,7 +114,6 @@ addForm.addEventListener("submit", (e) => {
   e.preventDefault();
 });
 
-// //! function get products from db
 addConfirm.addEventListener("click", async () => {
   if (
     !imgInp.value ||
@@ -186,23 +185,7 @@ render();
 
 // //! categories
 
-// document.addEventListener("DOMContentLoaded", function () {
-//   let catalogSections = document.querySelectorAll(".left-catalog-section");
 
-//   catalogSections.forEach(function (section) {
-//     section.addEventListener("click", function (event) {
-//       event.preventDefault();
-
-//       let subCategories = this.querySelector(".left-catalog-section-sections");
-
-//       subCategories.style.display =
-//         subCategories.style.display === "none" ? "block" : "none";
-
-//       let arrow = this.querySelector("svg");
-//       arrow.parentNode.classList.toggle("collapsed");
-//     });
-//   });
-// });
 
 // //! delete
 // document.addEventListener("click", async (e) => {

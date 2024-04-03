@@ -31,6 +31,14 @@
       "category": "jordans",
       "description": "gold",
       "id": 3
+    },
+    {
+      "image": "https://i.pinimg.com/originals/7a/dc/b0/7adcb00b069d8994b8923c74c828d8b2.jpg",
+      "title": "Ring",
+      "price": "200",
+      "category": "nacklaces",
+      "description": "gold",
+      "id": 4
     }
   ]
 }
