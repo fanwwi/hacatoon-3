@@ -4,11 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/adaptive.css" />
     <title>Document</title>
   </head>
-
   <body>
-
     <!--! header  -->
 
     <header>
@@ -21,116 +20,125 @@
         <button id="logIn" class="logBtn">Log in</button>
       </nav>
       <div class="search">
-         <img src="./img/search.jpg" alt="" />
-        <input type="text" id="search">
+        <img src="./img/search.jpg" alt="" />
+        <input type="text" id="search" />
       </div>
     </header>
 
+    <section class="section1" id="home">
+      <!--! home  -->
 
-      <section class="section1" id="home">
+      <div class="text-block">
+        <h1>The new phones are here take a look.</h1>
+        <p>
+          "Unlock endless possibilities with cutting-edge phones and computers –
+          Your gateway to seamless tech experiences!
+        </p>
+        <a href="#products" id="button">Explore</a>
+      </div>
+      <img src="./img/phones.png" alt="" />
+    </section>
 
-        <!--! home  -->
+    <!--! visual  -->
 
-        <div class="text-block">
-          <h1>The new phones are here take a look.</h1>
-          <p>
-            "Unlock endless possibilities with cutting-edge phones and computers
-            – Your gateway to seamless tech experiences!
+    <section class="section2" id="visual">
+      <h2>Shop our latest offers and categories</h2>
+      <div class="section2_container">
+        <div class="block1">
+          <div class="img-1">
+            <img src="./img/comp.jpg" alt="" />
+            <span class="text">True Laptop Solution</span>
+          </div>
+
+          <div class="img-2">
+            <img src="./img/watch.jpg" alt="" />
+            <span class="text text2">Not just stylisht</span>
+          </div>
+        </div>
+        <div class="block2">
+          <div class="img-3">
+            <img src="./img/phone.jpg" alt="" />
+            <span class="text">Your day <br />to <br />day life</span>
+          </div>
+
+          <div class="img-4">
+            <img src="./img/tablet.jpg" alt="" />
+            <span class="text">Empover your <br />work</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section3">
+      <h2>Save on our most selled items.</h2>
+      <div class="block4">
+        <div class="best-2">
+          <span class="name">Smart light bulb pack</span>
+          <h2>Best selling</h2>
+          <a href="">Explore</a>
+          <img src="./img/img-mac.png" alt="" />
+        </div>
+        <div class="best-3">
+          <span class="name">Smart light bulb pack</span>
+          <h2>Every product</h2>
+          <a href="">Explore</a>
+          <img src="./img/img-i.png" alt="" />
+        </div>
+        <div class="best-3">
+          <span class="name">Smart light bulb pack</span>
+          <h2>Best quallity</h2>
+          <a href="">Explore</a>
+          <img src="./img/apple.jpg" alt="" />
+        </div>
+      </div>
+    </section>
+
+    <!--! products -->
+
+    <section class="section3" id="products">
+      <h2>See the best around here</h2>
+
+      <div class="block3">
+        <div class="sell">
+          <img src="./img/macbook.png" alt="" />
+          <h3>macbook pro 13</h3>
+          <p class="description">
+            Unleash the potential of productivity and style with the MacBook Pro
+            13, featuring a stunning Retina display, powerful M1 chip.
           </p>
-          <a href="#products" id="button">Explore</a>
+          <span class="prise">$ 1,200.00 USD</span>
         </div>
-        <img src="./img/phones.png" alt="" />
-      </section>
+      </div>
+    </section>
 
+    <!--! conatact -->
 
-      <!--! visual  -->
-
-      <section class="section2" id="visual">
-        <h2>Shop our latest offers and categories</h1>
-        <div class="section2_container">
-          <div class="block1">
-            <div class="img-1">
-              <img src="./img/comp.jpg" alt="" />
-              <span class="text">True Laptop Solution</span>
-            </div>
-
-            <div class="img-2">
-              <img src="./img/watch.jpg" alt="" />
-              <span class="text text2">Not just stylisht</span>
-            </div>
-          </div>
-          <div class="block2">
-            <div class="img-3">
-              <img src="./img/phone.jpg" alt="" />
-              <span class="text">Your day <br>to <br>day life</span>
-            </div>
-
-            <div class="img-4">
-              <img src="./img/tablet.jpg" alt="" />
-              <span class="text">Empover your <br>work</span>
-            </div>
-          </div>
+    <footer class="section4" id="contact">
+      <div class="block6">
+        <h2>Never miss a thing</h2>
+        <img src="./img/miss.png" alt="" />
+        <div class="input-div">
+          <input type="email" placeholder="Your email" />
+          <a href="" id="button">Subscribe</a>
         </div>
+        <br />
+        <span class="e-mail">We wil send you our innovations</span>
+      </div>
+    </footer>
 
-        <sectionc class="section3">
-          <h2>Save on our most selled items.</h1>
+    <!--! modal  -->
 
-            <div class="block4">
-  
-              <div class="best-2">
-                <span class="name">Smart light bulb pack</span>
-                <h2>Best selling</h2>
-                <a href="">Explore</a>
-                <img src="./img/img-mac.png" alt="" />
-              </div>
-              <div class="best-3">
-                <span class="name">Smart light bulb pack</span>
-                <h2>Every product</h2>
-                <a href="">Explore</a>
-                <img src="./img/img-i.png" alt="" />
-              </div>
-              <div class="best-3">
-                <span class="name">Smart light bulb pack</span>
-                <h2>Best quallity</h2>
-                <a href="">Explore</a>
-                <img src="./img/apple.jpg" alt="" />
-              </div>
-            </div>
-        </section>
-
-        <!--! products -->
-
-        <section class="section3" id="products">
-          <h2>See the best around here</h1>
-            
-          <div class="block3">
-            <div class="sell">
-              <img src="./img/macbook.png" alt="" />
-              <h3>macbook pro 13</h3>
-              <p class="description">
-                Unleash the potential of productivity and style with the MacBook
-                Pro 13, featuring a stunning Retina display, powerful M1 chip.
-              </p>
-              <span class="prise">$ 1,200.00 USD</span>
-            </div>
-          </div>
-        </section>
-
-        <!--! conatact -->
-
-        <section class="section4" id="contact">
-          <div class="block6">
-            <h2>Never miss a thing</h2>
-            <img src="./img/miss.png" alt="" />
-            <div class="input-div">
-              <input type="email" placeholder="Your email" />
-              <a href="" id="button">Subscribe</a>
-            </div>
-            <br />
-            <span class="e-mail">We wil send you our innovations</span>
-          </div>
-        </section>
-      </section>
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Введите данные</h2>
+        <input type="text" placeholder="Поле 1" class="gray" />
+        <input type="text" placeholder="Поле 2" class="blue" />
+        <input type="text" placeholder="Поле 3" class="light-blue" />
+        <input type="text" placeholder="Поле 4" class="dark-blue" />
+        <input type="text" placeholder="Поле 5" class="dark-gray" />
+      </div>
     </div>
-
-    
+  </body>
+</html>
+<script src="./js/main.js"></script>
