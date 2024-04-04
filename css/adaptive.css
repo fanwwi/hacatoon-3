@@ -22,6 +22,15 @@
     margin-top: 420px;
     margin-left: -170px;
   }
+  .block1 {
+    margin-left: 150px;
+  }
+  .img-3 {
+    margin-left: 100px;
+  }
+  .block1 > div {
+    width: 500px;
+  }
   .block1 img {
     width: 70%;
     height: 100%;
@@ -63,6 +72,12 @@
     margin-left: 65px;
   }
 
+  #products {
+    width: 700px;
+    flex-wrap: wrap;
+    margin-left: 50px;
+  }
+
   .block5 img {
     width: 100%;
     height: 100%;
@@ -89,26 +104,65 @@
 }
 
 @media screen and (max-width: 430px) {
+  header a {
+    display: none;
+  }
+
   .section1 {
     margin-top: 100px;
   }
   header {
     height: 90px;
+    width: 400px;
+    flex-wrap: wrap;
   }
   .img-2 .text2 {
     margin-top: -10px;
   }
+  .block1 {
+    margin-left: 100px;
+  }
+  .block1 > div {
+    width: 300px;
+  }
+  .section2 .text {
+    font-size: 20px;
+    width: 100px;
+  }
+  .img-3 .text {
+    margin-left: -110px;
+  }
+  .img-2 .text {
+    margin-top: 50px;
+    margin-left: 10px;
+  }
+  .img-4 .text {
+    display: none;
+  }
+  .img-1 {
+    height: 300px;
+  }
   .block2 {
+    margin-top: -100px;
     margin-left: 20px;
+  }
+  .block2 > div {
+    width: 250px;
   }
   .section1 img {
     display: none;
   }
-  .img-2 .text2 {
-    margin-top: 10px;
+  #products {
+    width: 350px;
+    flex-wrap: wrap;
+    margin-left: 10px;
   }
-  .img-3 .text {
-    margin-left: -161px;
+
+  .block6 h2 {
+    font-size: 40px;
+  }
+  .block6 .input-div {
+    width: 300px;
   }
 }
 @media (max-width: 1290px) {
