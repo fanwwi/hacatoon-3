@@ -24,8 +24,11 @@ const imgInpEdit = document.getElementById("imgInpEdit");
 const titleInpEdit = document.getElementById("titleInpEdit");
 const priceInpEdit = document.getElementById("priceInpEdit");
 const descriptionInpEdit = document.getElementById("descriptionInpEdit");
-//! sign up
 
+//! emails
+const emailConfirm = document.querySelector("#button");
+
+//! sign up
 signUpBtn.addEventListener("click", (e) => {
   e.preventDefault();
   overlay.style.display = "block";
@@ -33,10 +36,6 @@ signUpBtn.addEventListener("click", (e) => {
 });
 
 overlay.addEventListener("click", closeModal);
-
-// addForm.addEventListener("click", function (event) {
-//   event.stopPropagation();
-// });
 
 //! close modal
 
@@ -133,7 +132,6 @@ addConfirm.addEventListener("click", async () => {
       },
       body: JSON.stringify(newProduct),
     });
-    console.log(response);
     imgInp.value = "";
     titleInp.value = "";
     priceInp.value = "";
