@@ -449,3 +449,40 @@ header a:hover,
   cursor: pointer;
   margin-left: 7px;
 }
+
+/*! Detail view for product  */
+
+.modal-product {
+  background-color: #d8e7e8;
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #000000;
+  border-radius: 50px;
+  width: 50px;
+}
+.modal-info-product {
+  display: flex;
+  justify-content: space-evenly;
+}
+.modal-info-product img {
+  width: 500px;
+}
+.info {
+  width: 500px;
+}
+.info h2 {
+  font-size: 50px;
+  color: grey;
+  margin: 30px 0;
+}
+.modal-info-product img {
+  width: 500px;
+}
+.info-img {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 50px;
+}
+.info-img img {
+  width: 150px;
+}
