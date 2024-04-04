@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/adaptive.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!--! header  -->
+
+    <header>
+      <img src="./img/logo.jpg" alt="" id="img" />
+      <nav>
+        <a href="#home">home</a>
+        <a href="#products">all products</a>
+        <a href="#contact">contacts us</a>
+        <button id="signUp" class="logBtn">Sign up</button>
+        <button id="addBtn" class="logBtn">Add product</button>
+      </nav>
+      <div class="search">
+        <img src="./img/search.jpg" alt="" />
+        <input type="text" id="search" placeholder="Search..." />
+      </div>
+    </header>
+
+    <section class="section1" id="home">
+      <!--! home  -->
+
+      <div class="text-block">
+        <h1>The new phones are here take a look.</h1>
+        <p>
+          "Unlock endless possibilities with cutting-edge phones and computers –
+          Your gateway to seamless tech experiences!
+        </p>
+        <a href="#products" id="button">Explore</a>
+      </div>
+      <img src="./img/phones.png" alt="" />
+    </section>
+
+    <!--! visual  -->
+
+    <section class="section2" id="visual">
+      <h2>Shop our latest offers and categories</h2>
+      <div class="section2_container">
+        <div class="block1">
+          <div class="img-1">
+            <img src="./img/comp.jpg" alt="" />
+            <span class="text">True Laptop Solution</span>
+          </div>
+
+          <div class="img-2">
+            <img src="./img/watch.jpg" alt="" />
+            <span class="text text2">Not just stylisht</span>
+          </div>
+        </div>
+        <div class="block2">
+          <div class="img-3">
+            <img src="./img/phone.jpg" alt="" />
+            <span class="text">Your day <br />to <br />day life</span>
+          </div>
+
+          <div class="img-4">
+            <img src="./img/tablet.jpg" alt="" />
+            <span class="text">Empover your <br />work</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section3" id="best">
+      <h2>Save on our most selled items.</h2>
+      <div class="block4">
+        <div class="best-2">
+          <span class="name">Smart light bulb pack</span>
+          <h2>Best selling</h2>
+          <a href="">Explore</a>
+          <img src="./img/img-mac.png" alt="" />
+        </div>
+        <div class="best-3">
+          <span class="name">Smart light bulb pack</span>
+          <h2>Every product</h2>
+          <a href="">Explore</a>
+          <img src="./img/img-i.png" alt="" />
+        </div>
+        <div class="best-4">
+          <span class="name">Smart light bulb pack</span>
+          <h2>Best quallity</h2>
+          <a href="">Explore</a>
+          <img src="./img/apple.jpg" alt="" />
+        </div>
+      </div>
+    </section>
+
+    <!--! products -->
+
+    <section class="section3" id="products">
+      <h2>See the best around here</h2>
+    </section>
+
+    <div class="paggBtns">
+      <button id="prevBtn">prev</button>
+      <button id="nextBtn">next</button>
+    </div>
+
+    <!--! conatact -->
+
+    <footer class="section4" id="contact">
+      <div class="block6">
+        <h2>Never miss a thing</h2>
+        <img src="./img/miss.png" alt="" />
+        <a href="" id="button">Start now!</a>
+        <br /><br />
+        <span class="e-mail">We wil send you our innovations</span>
+      </div>
+    </footer>
+
+    <!--! Login and registration  -->
+
+    <div class="overlay"></div>
+
+    <form class="signForm modal">
+      <h3>Sign up</h3>
+      <input id="usernameInp" type="text" placeholder="Username" />
+      <input id="emailInp" type="email" placeholder="Email" />
+      <input id="passwordInp" type="password" placeholder="Password" />
+      <input id="confirmInp" type="password" placeholder="Confirm password" />
+      <button id="signUpConfirm">Sign up</button>
+    </form>
+
+    <!--! add product  -->
+
+    <form class="addForm modal">
+      <h3>Add product</h3>
+      <input id="titleInp" type="text" placeholder="Title" />
+      <input id="priceInp" type="text" placeholder="Price in dollars" />
+      <input id="descriptionInp" type="text" placeholder="Description" />
+      <input id="imgInp" type="text" placeholder="URL to image" />
+      <button id="addConfirm">Add product</button>
+    </form>
+
+    <!--! edit product  -->
+
+    <form class="editForm modal">
+      <h3>Edit product</h3>
+      <input id="titleInpEdit" type="text" placeholder="Title" />
+      <input id="priceInpEdit" type="text" placeholder="Price in dollars" />
+      <input id="descriptionInpEdit" type="text" placeholder="Description" />
+      <input id="imgInpEdit" type="text" placeholder="URL to image" />
+      <button id="editConfirm">Edit product</button>
+    </form>
+  </body>
+</html>
+<script src="./js/main.js"></script>
