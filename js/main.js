@@ -17,19 +17,13 @@ const products = document.querySelector("#products");
 const imgInp = document.getElementById("imgInp");
 const titleInp = document.getElementById("titleInp");
 const priceInp = document.getElementById("priceInp");
-const categoryInp = document.getElementById("categoryInp");
 const descriptionInp = document.getElementById("descriptionInp");
 // //! edit
-// const editForm = document.querySelector(".editProduct");
-// const imgInpEdit = document.getElementById("imgInpEdit");
-// const titleInpEdit = document.getElementById("titleInpEdit");
-// const priceInpEdit = document.getElementById("priceInpEdit");
-// const categoryInpEdit = document.getElementById("categoryInpEdit");
-// const descriptionAreaEdit = document.getElementById("descriptionAreaEdit");
-
-// const cards = document.querySelector(".cards");
-// const divImg = document.getElementById("divImg");
-
+const editForm = document.querySelector(".editForm");
+const imgInpEdit = document.getElementById("imgInpEdit");
+const titleInpEdit = document.getElementById("titleInpEdit");
+const priceInpEdit = document.getElementById("priceInpEdit");
+const descriptionInpEdit = document.getElementById("descriptionInpEdit");
 //! sign up
 
 signUpBtn.addEventListener("click", (e) => {
@@ -119,7 +113,6 @@ addConfirm.addEventListener("click", async () => {
     !imgInp.value ||
     !titleInp.value ||
     !priceInp.value ||
-    !categoryInp.value ||
     !descriptionInp.value
   ) {
     alert("Some inputs are empty!");
@@ -129,7 +122,6 @@ addConfirm.addEventListener("click", async () => {
     image: imgInp.value,
     title: titleInp.value,
     price: priceInp.value,
-    category: categoryInp.value,
     description: descriptionInp.value,
   };
 
@@ -145,7 +137,6 @@ addConfirm.addEventListener("click", async () => {
     imgInp.value = "";
     titleInp.value = "";
     priceInp.value = "";
-    categoryInp.value = "";
     descriptionInp.value = "";
     closeModal();
     render(newProduct);
@@ -174,7 +165,9 @@ async function render() {
           <p class="description">
             ${product.description}
           </p>
-          <span class="prise">$${product.price}</span>
+          <span class="prise">$${product.price}</span><br />
+          <button id="${product.id}" class="editBtn">Edit</button>
+          <button id="${product.id}" class="deleteBtn">Delete</button>
         </div>
       </div>
   `;
@@ -183,87 +176,83 @@ async function render() {
 
 render();
 
-// //! categories
-
-
-
 // //! delete
-// document.addEventListener("click", async (e) => {
-//   if (e.target.classList.contains("delete-btn")) {
-//     await fetch(`${PRODUCTS_API}/${e.target.id}`, { method: "DELETE" });
-//     render();
-//   }
-// });
+
+document.addEventListener("click", async (e) => {
+  if (e.target.classList.contains("deleteBtn")) {
+    let answer = confirm("Are you sure?");
+    if (!answer) {
+      return;
+    }
+    await fetch(`http://localhost:8000/products/${e.target.id}`, {
+      method: "DELETE",
+    });
+    render();
+  }
+});
 
 // //! edit
 
-// let id = null;
+let id = null;
 
-// document.addEventListener("click", async (e) => {
-//   if (e.target.classList.contains("edit-btn")) {
-//     const productId = e.target.id;
-//     editForm.style.display = "block";
-//     overlay.style.display = "block";
-//     const data = await getQuery(`products/${productId}`);
-//     titleInpEdit.value = data.title;
-//     priceInpEdit.value = data.price;
-//     categoryInpEdit.value = data.category;
-//     descriptionAreaEdit.value = data.description;
-//     imgInpEdit.value = data.image;
-//     id = productId;
-//   }
-// });
+document.addEventListener("click", async (e) => {
+  if (e.target.classList.contains("editBtn")) {
+    editForm.style.display = "block";
+    overlay.style.display = "block";
 
-// editForm.addEventListener("submit", async (e) => {
-//   e.preventDefault();
-//   if (
-//     !titleInpEdit.value.trim() ||
-//     !priceInpEdit.value.trim() ||
-//     !descriptionAreaEdit.value.trim() ||
-//     !categoryInpEdit.value.trim() ||
-//     !imgInpEdit.value.trim()
-//   ) {
-//     alert("Some inputs are empty");
-//     return;
-//   }
-//   const editedObj = {
-//     title: titleInpEdit.value,
-//     price: priceInpEdit.value,
-//     description: descriptionAreaEdit.value,
-//     image: imgInpEdit.value,
-//     category: categoryInpEdit.value,
-//   };
-//   await fetch(`${PRODUCTS_API}/${id}`, {
-//     method: "PATCH",
-//     body: JSON.stringify(editedObj),
-//     headers: {
-//       "Content-Type": "application/json;charset=utf-8",
-//     },
-//   });
-//   render();
-//   closeModal();
-// });
+    const response = await fetch(
+      `http://localhost:8000/products/${e.target.id}`
+    );
+    const data = await response.json();
+
+    titleInpEdit.value = data.title;
+    priceInpEdit.value = data.price;
+    descriptionInpEdit.value = data.description;
+    imgInpEdit.value = data.image;
+    id = e.target.id;
+
+    console.log(
+      titleInpEdit.value,
+      priceInpEdit.value,
+      descriptionInpEdit.value,
+      imgInpEdit.value
+    );
+  }
+});
+
+editForm.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  if (
+    !titleInpEdit.value.trim() ||
+    !priceInpEdit.value.trim() ||
+    !descriptionInpEdit.value.trim() ||
+    !imgInpEdit.value.trim()
+  ) {
+    alert("Some inputs are empty");
+    return;
+  }
+  const editedObj = {
+    title: titleInpEdit.value,
+    price: priceInpEdit.value,
+    description: descriptionInpEdit.value,
+    image: imgInpEdit.value,
+  };
+  await fetch(`http://localhost:8000/products/${id}`, {
+    method: "PATCH",
+    body: JSON.stringify(editedObj),
+    headers: {
+      "Content-Type": "application/json;charset=utf-8",
+    },
+  });
+  render();
+  closeModal();
+});
 
 // //! search
 // searchInp.addEventListener("input", (e) => {
 //   console.log(e.target.value);
 //   search = e.target.value;
 //   render();
-// });
-
-// //! category
-// const categories = document.querySelectorAll(".first-level span");
-// console.log(categories);
-
-// categories.forEach((item) => {
-//   item.addEventListener("click", (e) => {
-//     if (e.target.innerText === "All") {
-//       category = "";
-//     } else {
-//       category = e.target.innerText.toLowerCase();
-//     }
-//     render();
-//   });
 // });
 
 // //!pagination

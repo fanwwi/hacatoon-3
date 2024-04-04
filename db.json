@@ -4,41 +4,58 @@
       "username": "DaNa",
       "email": "kurmanbekovaaidana88@gmail.com",
       "password": "12345678",
-      "id": 2
+      "id": 1
     }
   ],
   "products": [
     {
-      "image": "https://i.pinimg.com/originals/7a/dc/b0/7adcb00b069d8994b8923c74c828d8b2.jpg",
-      "title": "Ring",
-      "price": "200",
-      "category": "nacklaces",
-      "description": "gold",
+      "image": "https://www.istore.kg/media/products/iphone-14-finish-select-202209-6-7inch-purple_dGWM96I.webp",
+      "title": "iPhone 14 Plus",
+      "price": "840",
+      "description": "A17 Pro Chip Delivers Huge Leap in Graphics Performance, Changing Mobile Gaming",
       "id": 1
     },
     {
-      "image": "https://i.pinimg.com/originals/7a/dc/b0/7adcb00b069d8994b8923c74c828d8b2.jpg",
-      "title": "Ring",
-      "price": "200",
-      "category": "nacklaces",
-      "description": "gold",
+      "image": "https://www.istore.kg/media/products/iphone-15-pro-finish-select-202309-6-7inch-naturaltitanium.webp",
+      "title": "iPhone 15 Pro Max",
+      "price": "1310",
+      "description": "With iPhone 15 Pro, you can work with multiple focal lengths. It's like having seven pro lenses in your pocket wherever you go.",
       "id": 2
     },
     {
-      "image": "https://ae01.alicdn.com/kf/Hebe9ad6f085545babc7608ef5928280aG.jpg",
-      "title": "jordans",
-      "price": "200$",
-      "category": "jordans",
-      "description": "gold",
+      "image": "https://www.istore.kg/media/products/iphone-15-finish-select-202309-6-7inch-blue_%D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.webp",
+      "title": "iPhone 15 Plus",
+      "price": "930",
+      "description": "The A16 Bionic chip is ultra-fast and ultra-efficient, delivering amazing all-day battery life",
       "id": 3
     },
     {
-      "image": "https://i.pinimg.com/originals/7a/dc/b0/7adcb00b069d8994b8923c74c828d8b2.jpg",
-      "title": "Ring",
-      "price": "200",
-      "category": "nacklaces",
-      "description": "gold",
-      "id": 4
+      "image": "https://www.istore.kg/media/products/mac16pro_mls4G6u_MhZ8lXa.webp",
+      "title": "MacBook Pro 16",
+      "price": "4220",
+      "description": "16-Core CPU 40-Core GPU 48GB Unified Memory 1TB SSD Storage¹",
+      "id": 5
+    },
+    {
+      "image": "https://www.istore.kg/media/products/ipad-pro-11-select-wifi-silver-202210.webp",
+      "title": "iPad Pro 11",
+      "price": "820",
+      "description": "11\" Liquid Retina display with ProMotion, True Tone and P3 wide color gamut",
+      "id": 6
+    },
+    {
+      "image": "https://www.istore.kg/media/products/1234_MVOMmNg.webp",
+      "title": "Watch Series 9 with Aluminum Case with Starlight Sport Loop",
+      "price": "400",
+      "description": "Get deep insights into your physical and mental health, including heart rate, blood oxygen levels, mood and more",
+      "id": 7
+    },
+    {
+      "image": "https://www.istore.kg/media/products/VISION_PRO.webp",
+      "title": "Vision Pro",
+      "price": "3790",
+      "description": "Apple Vision Pro is the culmination of years of experience developing high-performance mobile and wearable devices, culminating in the most ambitious product Apple has ever created.",
+      "id": 8
     }
   ]
 }

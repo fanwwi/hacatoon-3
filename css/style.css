@@ -233,6 +233,11 @@ header a:hover,
   width: 1200px;
   display: flex;
   flex-wrap: wrap;
+  gap: 40px;
+}
+
+.sell img {
+  cursor: pointer;
 }
 
 .block3 {
@@ -263,7 +268,32 @@ header a:hover,
   font-size: 18px;
 }
 
-/*!   */
+.editBtn {
+  padding: 5px 10px;
+  margin-top: 20px;
+  background-color: #095a73;
+  color: #fff;
+  border: 1px solid #095a73;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.deleteBtn {
+  margin-top: 20px;
+  padding: 5px 10px;
+  background-color: #9e0099;
+  color: #fff;
+  border: 1px solid #9e0099;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/*! section 3  */
+
+.section3 h2 {
+  font-size: 42px;
+  text-align: center;
+  margin: 40px auto;
+}
 
 .block4 {
   display: flex;
