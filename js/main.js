@@ -1,5 +1,5 @@
 //! register connections
-const signUpBtn = document.querySelector("#signUpBtn");
+const signUpBtn = document.querySelector("#signUp");
 const overlay = document.querySelector(".overlay");
 const usernameInp = document.querySelector("#usernameInp");
 const emailInp = document.querySelector("#emailInp");
@@ -24,6 +24,10 @@ const imgInpEdit = document.getElementById("imgInpEdit");
 const titleInpEdit = document.getElementById("titleInpEdit");
 const priceInpEdit = document.getElementById("priceInpEdit");
 const descriptionInpEdit = document.getElementById("descriptionInpEdit");
+
+const PRODUCTS_API = 'http://localhost:8000/products'
+const searchInp = document.querySelector('#search')
+const modalInfo = document.querySelector('#modal-info')
 
 //! emails
 const emailConfirm = document.querySelector("#button");
@@ -90,7 +94,7 @@ async function registration() {
       body: JSON.stringify(data),
     });
     alert("User successfully registrated!");
-  } catch (error) {}
+  } catch (error) { }
 
   signForm.reset();
   closeModal();
@@ -98,7 +102,7 @@ async function registration() {
 
 //! function add products
 
-addBtn.addEventListener("click", () => {
+addConfirm.addEventListener("click", () => {
   addForm.style.display = "block";
   overlay.style.display = "block";
 });
@@ -138,41 +142,73 @@ addConfirm.addEventListener("click", async () => {
     descriptionInp.value = "";
     closeModal();
     render(newProduct);
-  } catch (error) {}
+  } catch (error) { }
 });
 
 // //! function render
 
-// let search = "";
-// let category = "";
-// let page = 1;
-// const limit = 2;
+let search = "";
+let category = "";
+let page = 1;
+const limit = 4;
+// !
+
 
 async function render() {
-  const res = await fetch("http://localhost:8000/products");
-  const data = await res.json();
+  let API = category
+    ? `${PRODUCTS_API}?q=${search}&category=${category}&_page=${page}&_limit=${limit}`
+    : `${PRODUCTS_API}?q=${search}&_page=${page}&_limit=${limit}`;
+  const res = await fetch(API)
+  const data = await res.json()
 
-  products.innerHTML = "";
 
-  data.forEach((product) => {
+
+
+  console.log(data);
+  products.innerHTML = '';
+  data.forEach(product => {
     products.innerHTML += `
     <div class="block3">
-        <div class="sell">
-          <img src="${product.image}" alt="" />
-          <h3>${product.title}</h3>
-          <p class="description">
-            ${product.description}
-          </p>
-          <span class="prise">$${product.price}</span><br />
-          <button id="${product.id}" class="editBtn">Edit</button>
-          <button id="${product.id}" class="deleteBtn">Delete</button>
-        </div>
+      <div class="sell">
+        <img src="${product.image}" alt="" />
+        <h3>${product.title}</h3>
+        <p class="description">
+          ${product.description}
+        </p>
+        <span class="prise">$${product.price}</span><br />
+        <button id="${product.id}" class="editBtn">Edit</button>
+        <button id="${product.id}" class="deleteBtn">Delete</button>
       </div>
-  `;
-  });
-}
+    </div>
+    `
+  })
 
-render();
+}
+render()
+let id = null;
+
+
+// document.addEventListener('click', async (e) => {
+//   if (e.target.classList.contains('sell')) {
+//     const id = e.target.id;
+//       modalInfo.style.display = "block";
+//       overlay.style.display = "block";
+
+//       const res = await fetch(`http://localhost:8000/products/${id}`);
+//       const data = await res.json();
+//       modalInfo.innerHTML = `
+//         <div>
+//           <img src="${data.image}" alt="">
+//           <div class="info">
+//             <h3>${data.title}</h3>
+//             <p>${data.description}</p>
+//             <p>${data.price}</p>
+//           </div>
+//         </div>
+//       `;
+//   }
+// });
+
 
 // //! delete
 
@@ -185,13 +221,13 @@ document.addEventListener("click", async (e) => {
     await fetch(`http://localhost:8000/products/${e.target.id}`, {
       method: "DELETE",
     });
-    render();
+    render()
   }
 });
 
 // //! edit
 
-let id = null;
+
 
 document.addEventListener("click", async (e) => {
   if (e.target.classList.contains("editBtn")) {
@@ -247,20 +283,75 @@ editForm.addEventListener("submit", async (e) => {
 });
 
 // //! search
-// searchInp.addEventListener("input", (e) => {
-//   console.log(e.target.value);
-//   search = e.target.value;
-//   render();
-// });
+
+
+
+
+searchInp.addEventListener("input", (e) => {
+  console.log(e.target.value);
+  search = e.target.value;
+  render();
+});
+
+
+
+
 
 // //!pagination
-// const prevBtn = document.querySelector("#prev");
-// const nextBtn = document.querySelector("#next");
+const prevBtn = document.querySelector("#prevBtn");
+const nextBtn = document.querySelector("#nextBtn");
+const pageSpan = document.querySelector("#pageNum");
+
+async function fetchData() {
+  const response = await fetch('http://localhost:8000/products');
+  const data = await response.json();
+  return data;
+}
+
+async function checkPagination() {
+  const data = await fetchData();
+  const totalCount = Math.ceil(data.length / limit);
+
+  if (page === totalCount) {
+    nextBtn.style.display = "none";
+  } else {
+    nextBtn.style.display = "inline";
+  }
+
+  if (page === 1) {
+    prevBtn.style.display = "none";
+  } else {
+    prevBtn.style.display = "inline";
+  }
+}
+checkPagination();
+
+prevBtn.addEventListener("click", async () => {
+  if (page > 1) {
+    page--;
+    pageSpan.innerText = page;
+    await checkPagination();
+    render();
+  }
+});
+
+nextBtn.addEventListener("click", async () => {
+  page++;
+  pageSpan.innerText = page;
+  await checkPagination();
+  render();
+});
+
+
+
+// const prevBtn = document.querySelector("#prevBtn");
+// const nextBtn = document.querySelector("#nextBtn");
 // const pageSpan = document.querySelector("#pageNum");
 
 // async function checkPagination() {
-//   const data = await getQuery("products");
-//   const totalCount = Math.ceil(data.length / 2);
+//   const data = await fetch(`http://localhost:8000/products`);
+//   const totalCount = Math.ceil(data.length / limit);
+
 //   if (page === totalCount) {
 //     nextBtn.style.display = "none";
 //   } else {
@@ -275,16 +366,18 @@ editForm.addEventListener("submit", async (e) => {
 // }
 // checkPagination();
 
-// prevBtn.addEventListener("click", () => {
-//   page--;
-//   checkPagination();
-//   pageSpan.innerText = page;
-//   render();
+// prevBtn.addEventListener("click", async () => {
+//   if (page > 1) {
+//     page--;
+//     pageSpan.innerText = page;
+//     await checkPagination();
+//     render();
+//   }
 // });
 
-// nextBtn.addEventListener("click", () => {
+// nextBtn.addEventListener("click", async () => {
 //   page++;
-//   checkPagination();
 //   pageSpan.innerText = page;
+//   await checkPagination();
 //   render();
 // });
